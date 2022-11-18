@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab 改版</title>
+    <script src="https://kit.fontawesome.com/6cb661ae9a.js" crossorigin="anonymous"></script>
+    <style>
+      body {
+        background:#ddd;
+        font-family:"Raleway";
+      }
+      .tabs {
+        margin: auto;
+        margin-top: 100px;
+        border: 1px red solid;
+        width:900px;
+        height:250px;
+      }
+      .tab-header-wrap{
+        background-color: #ccc;
+        border-radius: 10px;
+        position: relative;
+      }
+      .tab-border {
+        width: 150px;
+        height: 20px;
+        position: absolute;
+        clip-path: url(#menu);
+        background-color: #000;
+      }
+
+      .tab-header-wrap .tab-header {
+        height:60px;
+        display:flex;
+        align-items:center;
+      }
+      .tab-header-wrap .tab-header > div {
+        width:calc(100% / 6);
+        text-align:center;
+        color:#888;
+        font-weight:600;
+        cursor:pointer;
+        font-size:14px;
+        text-transform:uppercase;
+        outline:none;
+      }
+      .tab-header-wrap .tab-header > div > i {
+        display:block;
+        margin-bottom:5px;
+      }
+      .tab-header-wrap .tab-header > div.active {
+        color:#00acee;
+      }
+      .tab-header-wrap .tab-indicator {
+        position:relative;
+        width:calc(100% / 4);
+        height:5px;
+        background:#00acee;
+        left:0px;
+        border-radius:5px;
+        transition:all 500ms ease-in-out;
+      }
+      .tabs .tab-body {
+        position:relative;
+        height:calc(100% - 60px);
+        padding:10px 5px;
+      }
+      .tabs .tab-body > div {
+        position:absolute;
+        top:-200%;
+        opacity:0;
+        transform:scale(0.9);
+        transition:opacity 500ms ease-in-out 0ms,
+          transform 500ms ease-in-out 0ms;
+      }
+      .tabs .tab-body > div.active {
+        top:0px;
+        opacity:1;
+        transform:scale(1);
+      }
+
+      
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab-header-wrap">
+          <div class="tab-header">
+            <div class="tab-icon active">
+                <img src="./icon/fontrip-icon.svg" alt="" style="background-color: #F29600;border-radius: 100px;padding: 10px;">
+              <p>FonTrip</p> 
+            </div>
+            <div class="tab-icon">
+              <img src="./icon/fontour-icon.svg" alt="">
+              <p>FonTour</p>
+            </div>
+            <div class="tab-icon">
+              <img src="./icon/fonticket-icon.svg" alt="">
+              <p>FonTicket</p>
+            </div>
+            <div class="tab-icon">
+              <img src="./icon/fonpay-icon.svg" alt="">
+              <p>FonPay</p>
+            </div>
+            <div class="tab-icon">
+              <img src="./icon/fonboard-icon.svg" alt="">
+              <p>FonBoardr</p>
+            </div>
+            <div class="tab-icon">
+              <img src="./icon/funit-icon.svg" alt="">
+              <p>好好玩</p>
+            </div>
+          </div>
+          <!-- <div class="tab-indicator"></div> -->
+          <!-- 凸點 -->
+          <div class="tab-border"></div>
+        </div>
+        <div class="tab-body">
+          <div class="tab-content active">
+            <h2>This is code section</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error neque saepe commodi blanditiis fugiat nisi aliquam ratione porro quibusdam in, eveniet accusantium cumque. Dolore officia reprehenderit perferendis quod libero omnis.</p>
+          </div>
+          <div class="tab-content">
+            <h2>This is about section</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi minus exercitationem vero, id autem fugit assumenda a molestiae numquam at, quisquam cumque. Labore eligendi perspiciatis quia incidunt quaerat ut ducimus?</p>
+          </div>
+          <div class="tab-content">
+            <h2>This is services section</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi minus exercitationem vero, id autem fugit assumenda a molestiae numquam at, quisquam cumque. Labore eligendi perspiciatis quia incidunt quaerat ut ducimus?</p>
+          </div>
+          <div class="tab-content">
+            <h2>This is contact section</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi minus exercitationem vero, id autem fugit assumenda a molestiae numquam at, quisquam cumque. Labore eligendi perspiciatis quia incidunt quaerat ut ducimus?</p>
+          </div>
+          <div class="tab-content">
+            <h2>This is contact section</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi minus exercitationem vero, id autem fugit assumenda a molestiae numquam at, quisquam cumque. Labore eligendi perspiciatis quia incidunt quaerat ut ducimus?</p>
+          </div>
+          <div class="tab-content">
+            <h2>This is contact section</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi minus exercitationem vero, id autem fugit assumenda a molestiae numquam at, quisquam cumque. Labore eligendi perspiciatis quia incidunt quaerat ut ducimus?</p>
+          </div>
+        </div>
+    </div>
+    <div class="svg-container">
+      <svg viewBox="0 0 202.9 45.5" >
+          <clipPath id="menu" clipPathUnits="objectBoundingBox" transform="scale(0.0049285362247413 0.021978021978022)">
+            <path d="M104,36.1c17.9,0.3,35.5-5.3,55.5-16.8C185.7,4.2,200.9,0.7,207.9,0H104.5h-1H0c7.1,0.7,22.3,4.2,48.5,19.3C68.4,30.8,86,36.4,104,36.1z"/> 
+            <path d="M42,48.8"/>
+          </clipPath>
+      </svg>
+    </div>
+</body>
+
+
+
+
+<script>
+    let tabHeader = document.getElementsByClassName("tab-header")[0];
+    let tabBorder = document.getElementsByClassName("tab-border")[0];
+    let tabBody = document.getElementsByClassName("tab-body")[0];
+    let tabsPane = tabHeader.getElementsByTagName("div");
+
+    for(let i=0; i<tabsPane.length; i++){
+      tabsPane[i].addEventListener("click",function(){
+      tabHeader.getElementsByClassName("active")[0].classList.remove("active");
+      tabsPane[i].classList.add("active");
+  
+
+      tabBody.getElementsByClassName("active")[0].classList.remove("active");
+      tabBody.getElementsByClassName("tab-content")[i].classList.add("active");
+      tabBorder.style.left = `calc(calc(100% / 6) * ${i})`;
+      console.log("index:",i);
+      });
+    }
+</script>
+
+</html>

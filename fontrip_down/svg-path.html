@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svg Path</title>
+    <style>
+        .pic{
+            width: 100px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"></script>
+</head>
+<body>
+    <h1>svg path</h1>
+    <div class="pic">
+        <img src="./icon/SvgPath-02.svg" alt="">
+    </div>
+    <h2>svg path2</h2>
+    <div class="pic">
+        <svg>
+            <path d="M66.6,64.8l-54.6,0c0-14.5,5.8-28.4,16-38.6C38.9,15.2,53.9,9.4,69.3,10.2L66.6,64.8z"/>
+            <path d="M642.6-69.6H298.2v73h112.8c4.4,25.7,27,45.5,53.8,45.5c26.8,0,49.4-19.8,53.8-45.5h124.1V-69.6z"/>
+            <line class="st0" x1="464.8" y1="66.4" x2="464.8" y2="-44.5"/>
+        </svg>
+    </div>
+    <div class="pic">
+        <svg>
+        <g>
+            <path d="M149.1,12.8c-18.5-0.3-36.6,5.3-57.1,16.8c-27,15.1-42.7,18.6-50,19.3h106.6h1h106.6c-7.3-0.7-22.9-4.2-50-19.3
+                C185.7,18.1,167.5,12.5,149.1,12.8z"/>
+            <path d="M42,48.8"/>
+        </g>
+        </svg>
+    </div>
+</body>
+
+<script>
+    console.log("Hello world!");
+</script>
+
+<script>
+    /*
+ * Replace all SVG images with inline SVG
+ */
+jQuery('img.svg').each(function(){
+    var $img = jQuery(this);
+    var imgID = $img.attr('id');
+    var imgClass = $img.attr('class');
+    var imgURL = $img.attr('src');
+    
+
+    jQuery.get(imgURL, function(data) {
+        // Get the SVG tag, ignore the rest
+        var $svg = jQuery(data).find('svg');
+       
+
+        // Add replaced image's ID to the new SVG
+        if(typeof imgID !== 'undefined') {
+            $svg = $svg.attr('id', imgID);
+        }
+        // Add replaced image's classes to the new SVG
+        if(typeof imgClass !== 'undefined') {
+            $svg = $svg.attr('class', imgClass+' replaced-svg');
+        }
+
+        // Remove any invalid XML tags as per http://validator.w3.org
+        $svg = $svg.removeAttr('xmlns:a');
+
+        // Check if the viewport is set, if the viewport is not set the SVG wont't scale.
+        if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+            $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+        }
+
+        // Replace image with new SVG
+        $img.replaceWith($svg);
+
+    }, 'xml');
+    
+
+});
+
+</script>
+
+
+
+
+
+</html>

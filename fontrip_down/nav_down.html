@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Tab Bar down</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"> </script>
+    
+</head>
+<body>
+  <div class="menu-wrap">
+    <div class="menu">
+      <div class="menu-header">
+        <div class="menu-btn active">
+          <div class="btn-name">
+            <span>FonTrip</span>
+          </div>
+          <button class="menu__item active" style="--bgColorItem: #F29600;" >
+            <div class="service-icon">
+              <img src="./icon/fontrip-icon.svg" alt="">
+            </div>  
+          </button>
+        </div>
+        <div class="menu-btn">
+          <div class="btn-name">
+            <span>FonTour</span>
+          </div>
+          <button class="menu__item" style="--bgColorItem: #FF9315;" >
+            <div class="service-icon">
+              <img src="./icon/fontour-icon.svg" alt="">
+            </div>    
+          </button>
+        </div>
+        <div class="menu-btn">
+          <div class="btn-name">
+            <span>FonTicket</span>
+          </div>
+          <button class="menu__item" style="--bgColorItem: #BF0E58;" >
+            <div class="service-icon">
+              <img src="./icon/fonticket-icon.svg" alt="">
+            </div>    
+          </button>
+        </div>
+        <div class="menu-btn">
+          <div class="btn-name">
+            <span>FonPay</span>
+          </div>
+          <button class="menu__item" style="--bgColorItem: #47C5C5;" >
+            <div class="service-icon">
+              <img src="./icon/fonpay-icon.svg" alt="">
+            </div>    
+          </button>
+        </div>
+        <div class="menu-btn">
+          <div class="btn-name">
+            <span>FonBoard</span>
+          </div>
+          <button class="menu__item" style="--bgColorItem: #5987CC;" >
+            <div class="service-icon">
+              <img src="./icon/fonboard-icon.svg" alt="">
+            </div>    
+          </button>
+        </div>
+        <div class="menu-btn">
+          <div class="btn-name">
+            <span>Fun it</span>
+          </div>
+          <button class="menu__item" style="--bgColorItem: #EEA9AB;" >
+            <div class="service-icon">
+              <img src="./icon/funit-icon.svg" alt="">
+            </div>    
+          </button>
+        </div>
+      </div>
+      <!-- 凸點 -->
+      <div class="menu__border"></div> 
+    </div>
+    <div class="pd-wrap">
+      <div class="pd-content active">
+        <h3>FonTour</h3>
+        <span>鏈結與傳遞獨特的旅遊體驗</span>
+        <p>Fontour與全球旅遊服務供應商合作，累積豐富且深度的旅遊元件資料庫，獨有的商品組裝機制，打造與眾不同的自由行產品，包含旅客喜愛的City Pass、一般聯票、多日型或效期型彈性套票以及商圈消費券等，都可以運用本平台彈性設計。 透過串聯全球B2B分銷網絡，將這些獨特的自由行產品銷售至海內外，以客源地的通路力量進行推廣，讓全球的旅客都有機會購買與體驗。 Fontour無疑是政府單位促進目的地觀光的最佳工具與夥伴，也是旅遊服務供應商的服務推廣利器，更是全球OTA的最佳產品來源。</p>
+      </div>
+      <div class="pd-content">
+        <h3>FonTour</h3>
+        <span>鏈結與傳遞獨特的旅遊體驗</span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, id repudiandae excepturi minima omnis ipsam eaque hic unde qui, voluptate repellat nemo exercitationem rem dolorum, quos accusamus earum nam nihil!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="svg-container">
+      <svg viewBox="0 0 202.9 45.5" >
+          <clipPath id="menu" clipPathUnits="objectBoundingBox" transform="scale(0.0049285362247413 0.021978021978022)">
+            <path d="M104,36.1c17.9,0.3,35.5-5.3,55.5-16.8C185.7,4.2,200.9,0.7,207.9,0H104.5h-1H0c7.1,0.7,22.3,4.2,48.5,19.3
+  C68.4,30.8,86,36.4,104,36.1z"/> 
+        <path d="M42,48.8"/>
+          </clipPath>
+      </svg>
+  </div>
+
+</body>
+
+
+<!-- <path  d="M6.7,45.5c5.7,0.1, 14.1-0.4,23.3-4c5.7-2.3,9.9-5,18.1-10.5c10.7-7.1,11.8-9.2,20.6-14.3c5-2.9,9.2-5.2,15.2-7
+              c7.1-2.1,13.3-2.3,17.6-2.1c4.2-0.2,10.5,0.1,17.6,2.1c6.1,1.8,10.2,4.1,15.2,7c8.8,5,9.9,7.1,20.6,14.3c8.3,5.5,12.4,8.2,18.1,10.5
+              c9.2,3.6,17.6,4.2,23.3,4H6.7z"/> -->
+
+
+<!-- <script>
+  "use strict"; 
+
+const body = document.body;
+// const bgColorsBody = ["#ffb457", "#ff96bd", "#9999fb", "#ffe797", "#cffff1"];
+const menu = body.querySelector(".menu");
+const menuItems = menu.querySelectorAll(".menu__item");//按鈕背景色
+const menuBorder = menu.querySelector(".menu__border");//凸點
+let activeItem = menu.querySelector(".active");//被點擊到的那個按鈕
+
+const pdWrap = body.querySelector(".pd-wrap");
+const pdContent =pdWrap.querySelectorAll(".pd-content");
+let activeContent =pdWrap.querySelector(".active-txt");
+
+//點擊行為
+function clickItem(item, index) {
+
+    menu.style.removeProperty("--timeOut");
+    
+    if (activeItem == item) return;
+    
+    if (activeItem) {
+        activeItem.classList.remove("active");
+    }
+
+    item.classList.add("active");
+    // body.style.backgroundColor = bgColorsBody[index];
+    activeItem = item;
+    offsetMenuBorder(activeItem, menuBorder);
+}
+
+//border 互動
+function offsetMenuBorder(element, menuBorder) {
+
+    const offsetActiveItem = element.getBoundingClientRect();
+    const left = Math.floor(offsetActiveItem.left - menu.offsetLeft - (menuBorder.offsetWidth  - offsetActiveItem.width) / 2) +  "px";
+    menuBorder.style.transform = `translateX(${left} )`;
+
+}
+offsetMenuBorder(activeItem, menuBorder);
+  menuItems.forEach((item, index) => {
+    item.addEventListener("click", () => clickItem(item, index));
+})
+
+window.addEventListener("resize", () => {
+    offsetMenuBorder(activeItem, menuBorder);
+    menu.style.setProperty("--timeOut", "none");
+});
+
+// 被點選到的按鈕顯示該內容
+
+</script> -->
+
+<script>
+  let menuHeader = document.getElementsByClassName("menu-header")[0];
+  let menuBorder = document.getElementsByClassName("menu__border")[0];
+  let menuItem = document.getElementsByClassName("menu__item")[0];
+  let pdWrap = document.getElementsByClassName("pd-wrap")[0];
+  let menuBtn = menuHeader.getElementsByClassName("menu-btn");
+  console.log('pdWrap:',pdWrap);
+  // console.log('ssss:',menuHeader);
+
+  for(let i=0; i<menuBtn.length; i++){
+    menuBtn[i].addEventListener("click",function(){
+      menuHeader.getElementsByClassName("active")[0].classList.remove("active");
+      menuBtn[i].classList.add("active");
+      
+      let aaa = pdWrap.getElementsByClassName("active")[0].classList.remove("active");
+      // pdWrap.getElementsByClassName("pd-content")[i].classList.add("active");
+      console.log('aaa:',aaa);
+
+      menuBorder.style.left = `calc(calc(100% / 6.8) * ${i})`;
+      // body.style.backgroundColor = bgColorsBody[i];
+    });
+  }
+
+</script>
+
+</html>

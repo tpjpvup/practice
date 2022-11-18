@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pchome</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            width: 1200px;
+            margin: auto;
+            border: red 1px solid;
+        }
+
+        .tab-head{
+            background-color: #ccc;
+            border-radius: 10px;
+        }
+
+        .tab-head >ul{
+            width:calc(100% / 3);
+            padding: 30px 0;
+            display: flex;
+            /* justify-content: space-around; */
+            list-style: none;
+        }
+
+        .tab-head >ul >li.active{
+            color: #fff;
+        }
+        
+      
+        .tab-pic{
+            width: 800px;
+        }
+        .tab-pic img{
+            width: 100%;
+        }
+
+        .tab-content{
+            margin: auto;
+            width: 900px;
+            display: flex;
+            align-items: center;
+        }
+
+        .unblock{
+            display: none;
+            
+        }
+
+        .tab-border {
+            width: 150px;
+            height: 20px;
+            position: absolute;
+            clip-path: url(#menu);
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrap">
+            <div class="tab-head">
+                <ul>
+                    <li class="active">fontrip</li>
+                    <li>fontour</li>
+                    <li>fonticket</li>
+                </ul>
+                <div class="tab-border"></div>
+            </div>
+            <div class="tab-body">
+                <div class="tab-content">
+                    <div class="tab-txt">
+                        <h3>fontrip</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatem laboriosam error magnam accusantium maxime libero, consectetur ut quas fuga ipsa iusto? Quo sint accusamus laborum ducimus amet? Autem, et.</p>
+                    </div>
+                    <div class="tab-pic">
+                        <img src="./pic/Group 9108.png" alt="">
+                    </div>
+                </div>
+                <div class="tab-content unblock">
+                    <div class="tab-txt">
+                        <h3>fontour</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatem laboriosam error magnam accusantium maxime libero, consectetur ut quas fuga ipsa iusto? Quo sint accusamus laborum ducimus amet? Autem, et.</p>
+                    </div>
+                    <div class="tab-pic">
+                        <img src="./pic/Group 9108.png" alt="">
+                    </div>
+                </div>
+                <div class="tab-content unblock">
+                    <div class="tab-txt">
+                        <h3>fonticket</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatem laboriosam error magnam accusantium maxime libero, consectetur ut quas fuga ipsa iusto? Quo sint accusamus laborum ducimus amet? Autem, et.</p>
+                    </div>
+                    <div class="tab-pic">
+                        <img src="./pic/Group 9108.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="svg-container">
+            <svg viewBox="0 0 202.9 45.5" >
+                <clipPath id="menu" clipPathUnits="objectBoundingBox" transform="scale(0.0049285362247413 0.021978021978022)">
+                  <path d="M104,36.1c17.9,0.3,35.5-5.3,55.5-16.8C185.7,4.2,200.9,0.7,207.9,0H104.5h-1H0c7.1,0.7,22.3,4.2,48.5,19.3C68.4,30.8,86,36.4,104,36.1z"/> 
+                  <path d="M42,48.8"/>
+                </clipPath>
+            </svg>
+          </div>
+    </div>
+
+    <script>
+        let navs = Array.from(document.querySelectorAll(".tab-head >ul >li"));//撈到全部按鈕
+        let tabContent = Array.from(document.querySelectorAll(".tab-content"));//撈到全部內容
+        let tabBorder = document.querySelector(".tab-border");
+
+    navs.forEach((nav)=>{
+        nav.addEventListener('click',function(){
+            document.querySelector(".tab-head >ul >li.active").classList.remove("active")
+            this.classList.add("active")
+            document.querySelector(".tab-content:not(.unblock)").classList.add("unblock")
+            let index = navs.indexOf(this)
+            tabContent[index].classList.remove("unblock")
+            console.log('index:',index)
+
+            tabBorder.style.left = `calc(calc(100% / 3) * ${index})`;
+            
+        });
+
+    });
+    </script>
+</body>
+</html>
