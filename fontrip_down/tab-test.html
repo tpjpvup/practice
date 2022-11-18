@@ -17,16 +17,20 @@
         }
 
         .tab-head{
+            width: 900px;
+            margin: auto;
             background-color: #ccc;
             border-radius: 10px;
+            position: relative;
         }
 
         .tab-head >ul{
-            width:calc(100% / 3);
+            /* width:calc(100% / 3); */
             padding: 30px 0;
             display: flex;
-            /* justify-content: space-around; */
+            justify-content: space-around;
             list-style: none;
+            margin: auto;
         }
 
         .tab-head >ul >li.active{
@@ -35,7 +39,7 @@
         
       
         .tab-pic{
-            width: 800px;
+            width: 1200px;
         }
         .tab-pic img{
             width: 100%;
@@ -54,11 +58,12 @@
         }
 
         .tab-border {
+            border: 1px green solid;
             width: 150px;
             height: 20px;
-            position: absolute;
             clip-path: url(#menu);
             background-color: #000;
+            position: absolute;
         }
     </style>
 </head>
@@ -67,7 +72,9 @@
         <div class="wrap">
             <div class="tab-head">
                 <ul>
-                    <li class="active">fontrip</li>
+                    <li class="active">
+                        <div class="tab-icon"><img src="./icon/fontrip-icon.svg" alt=""></div>
+                        fontrip</li>
                     <li>fontour</li>
                     <li>fonticket</li>
                 </ul>
