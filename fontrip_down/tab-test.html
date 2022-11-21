@@ -13,28 +13,50 @@
         .wrap{
             width: 1200px;
             margin: auto;
-            border: red 1px solid;
+            padding-top:50px;
+            /* border: red 1px solid;  */
         }
 
         .tab-head{
-            width: 900px;
+            width: 950px;
             margin: auto;
             background-color: #ccc;
-            border-radius: 10px;
+            border-radius: 10px 6px;
             position: relative;
         }
 
         .tab-head >ul{
-            /* width:calc(100% / 3); */
-            padding: 30px 0;
+            width: 99%;
+            padding: 14px 0 4px 0;
             display: flex;
             justify-content: space-around;
             list-style: none;
             margin: auto;
         }
 
+        .tab-head >ul >li{
+            text-align: center;
+            color: #888;
+            font-weight:500;
+        }
+
+        .tab-icon img{
+            margin-bottom: 5px;
+            vertical-align: middle;
+        }
+
         .tab-head >ul >li.active{
             color: #fff;
+            font-size: 18px;
+        }
+
+
+        .tab-head >ul >li.active .tab-icon img{
+            background-color: #F29600;
+            border-radius: 100px;
+            padding: 5px;
+            transform: scale(1.25) translateY(-15px);
+            transition: transform 400ms ease-in-out 0ms;
         }
         
       
@@ -47,6 +69,7 @@
 
         .tab-content{
             margin: auto;
+            padding-top: 80px;
             width: 900px;
             display: flex;
             align-items: center;
@@ -58,11 +81,10 @@
         }
 
         .tab-border {
-            border: 1px green solid;
-            width: 150px;
-            height: 20px;
+            width: 148px;
+            height: 22px;
             clip-path: url(#menu);
-            background-color: #000;
+            background-color: #ccc;
             position: absolute;
         }
     </style>
@@ -73,17 +95,30 @@
             <div class="tab-head">
                 <ul>
                     <li class="active">
-                        <div class="tab-icon"><img src="./icon/fontrip-icon.svg" alt=""></div>
-                        fontrip</li>
-                    <li>fontour</li>
-                    <li>fonticket</li>
+                        <div class="tab-icon" ><img src="./icon/fontrip-icon.svg" alt=""></div>
+                        <span>FonTrip</span></li>
+                    <li>
+                        <div class="tab-icon"><img src="./icon/fontour-icon.svg" alt=""></div>
+                        <span>FonTour</span></li>
+                    <li>
+                        <div class="tab-icon"><img src="./icon/fonticket-icon.svg" alt=""></div>
+                        <span>FonTicket</span></li>
+                    <li>
+                        <div class="tab-icon"><img src="./icon/fonpay-icon.svg" alt=""></div>
+                        <span>FonPay</span></li>
+                    <li>
+                        <div class="tab-icon"><img src="./icon/fonboard-icon.svg" alt=""></div>
+                        <span>FonBoard</span></li>
+                    <li>
+                        <div class="tab-icon"><img src="./icon/funit-icon.svg" alt=""></div>
+                        <span>好好玩</span></li>
                 </ul>
                 <div class="tab-border"></div>
             </div>
             <div class="tab-body">
                 <div class="tab-content">
                     <div class="tab-txt">
-                        <h3>fontrip</h3>
+                        <h3>FonTrip</h3>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatem laboriosam error magnam accusantium maxime libero, consectetur ut quas fuga ipsa iusto? Quo sint accusamus laborum ducimus amet? Autem, et.</p>
                     </div>
                     <div class="tab-pic">
@@ -92,7 +127,7 @@
                 </div>
                 <div class="tab-content unblock">
                     <div class="tab-txt">
-                        <h3>fontour</h3>
+                        <h3>FonTour</h3>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatem laboriosam error magnam accusantium maxime libero, consectetur ut quas fuga ipsa iusto? Quo sint accusamus laborum ducimus amet? Autem, et.</p>
                     </div>
                     <div class="tab-pic">
@@ -101,7 +136,34 @@
                 </div>
                 <div class="tab-content unblock">
                     <div class="tab-txt">
-                        <h3>fonticket</h3>
+                        <h3>FonTicket</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatem laboriosam error magnam accusantium maxime libero, consectetur ut quas fuga ipsa iusto? Quo sint accusamus laborum ducimus amet? Autem, et.</p>
+                    </div>
+                    <div class="tab-pic">
+                        <img src="./pic/Group 9108.png" alt="">
+                    </div>
+                </div>
+                <div class="tab-content unblock">
+                    <div class="tab-txt">
+                        <h3>FonPay</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatem laboriosam error magnam accusantium maxime libero, consectetur ut quas fuga ipsa iusto? Quo sint accusamus laborum ducimus amet? Autem, et.</p>
+                    </div>
+                    <div class="tab-pic">
+                        <img src="./pic/Group 9108.png" alt="">
+                    </div>
+                </div>
+                <div class="tab-content unblock">
+                    <div class="tab-txt">
+                        <h3>FonBoard</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatem laboriosam error magnam accusantium maxime libero, consectetur ut quas fuga ipsa iusto? Quo sint accusamus laborum ducimus amet? Autem, et.</p>
+                    </div>
+                    <div class="tab-pic">
+                        <img src="./pic/Group 9108.png" alt="">
+                    </div>
+                </div>
+                <div class="tab-content unblock">
+                    <div class="tab-txt">
+                        <h3>好好玩</h3>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatem laboriosam error magnam accusantium maxime libero, consectetur ut quas fuga ipsa iusto? Quo sint accusamus laborum ducimus amet? Autem, et.</p>
                     </div>
                     <div class="tab-pic">
@@ -134,7 +196,7 @@
             tabContent[index].classList.remove("unblock")
             console.log('index:',index)
 
-            tabBorder.style.left = `calc(calc(100% / 3) * ${index})`;
+            tabBorder.style.left = `calc(calc(100% / 6) * ${index})`;
             
         });
 
