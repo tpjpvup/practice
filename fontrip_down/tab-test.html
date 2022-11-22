@@ -14,14 +14,13 @@
             width: 1200px;
             margin: auto;
             padding-top:50px;
-            /* border: red 1px solid;  */
         }
 
         .tab-head{
             width: 950px;
             margin: auto;
             background-color: #ccc;
-            border-radius: 10px 6px;
+            border-radius: 15px 15px 6px 6px;
             position: relative;
         }
 
@@ -52,13 +51,12 @@
 
 
         .tab-head >ul >li.active .tab-icon img{
-            background-color: #F29600;
+            background-color: var(--bgColorItem);
             border-radius: 100px;
             padding: 5px;
-            transform: scale(1.25) translateY(-15px);
+            transform: scale(1.18) translateY(-15px);
             transition: transform 400ms ease-in-out 0ms;
         }
-        
       
         .tab-pic{
             width: 1200px;
@@ -86,7 +84,11 @@
             clip-path: url(#menu);
             background-color: #ccc;
             position: absolute;
+            transition: transform 450ms 0.35ms;
         }
+
+        
+
     </style>
 </head>
 <body>
@@ -95,22 +97,22 @@
             <div class="tab-head">
                 <ul>
                     <li class="active">
-                        <div class="tab-icon" ><img src="./icon/fontrip-icon.svg" alt=""></div>
-                        <span>FonTrip</span></li>
+                        <div class="tab-icon" ><img src="./icon/fontrip-icon.svg" alt="" style="--bgColorItem: #F29600;"></div>
+                        <span >FonTrip</span></li>
                     <li>
-                        <div class="tab-icon"><img src="./icon/fontour-icon.svg" alt=""></div>
+                        <div class="tab-icon"><img src="./icon/fontour-icon.svg" alt="" style="--bgColorItem: #FF9315;"></div>
                         <span>FonTour</span></li>
                     <li>
-                        <div class="tab-icon"><img src="./icon/fonticket-icon.svg" alt=""></div>
+                        <div class="tab-icon"><img src="./icon/fonticket-icon.svg" alt="" style="--bgColorItem: #BF0E58;"></div>
                         <span>FonTicket</span></li>
                     <li>
-                        <div class="tab-icon"><img src="./icon/fonpay-icon.svg" alt=""></div>
+                        <div class="tab-icon"><img src="./icon/fonpay-icon.svg" alt="" style="--bgColorItem: #47C5C5;"></div>
                         <span>FonPay</span></li>
                     <li>
-                        <div class="tab-icon"><img src="./icon/fonboard-icon.svg" alt=""></div>
+                        <div class="tab-icon"><img src="./icon/fonboard-icon.svg" alt="" style="--bgColorItem: #5987CC;"></div>
                         <span>FonBoard</span></li>
                     <li>
-                        <div class="tab-icon"><img src="./icon/funit-icon.svg" alt=""></div>
+                        <div class="tab-icon"><img src="./icon/funit-icon.svg" alt="" style="--bgColorItem: #EEA9AB;"></div>
                         <span>好好玩</span></li>
                 </ul>
                 <div class="tab-border"></div>
@@ -194,9 +196,10 @@
             document.querySelector(".tab-content:not(.unblock)").classList.add("unblock")
             let index = navs.indexOf(this)
             tabContent[index].classList.remove("unblock")
-            console.log('index:',index)
 
-            tabBorder.style.left = `calc(calc(100% / 6) * ${index})`;
+            tabBorder.style.left = `calc(calc(100% / 7) * ${index})`;
+            let left =  tabBorder.style.left;
+            tabBorder.style.transform = `translate3d(${left}, 0 , 0)`;
             
         });
 
